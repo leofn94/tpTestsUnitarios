@@ -1,0 +1,20 @@
+{
+    "name": "testing/tp-final",
+    "description": "is2",
+    "type": "project",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "authors": [
+        {
+            "name": "leo",
+            "email": "leo.nicolet94@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
