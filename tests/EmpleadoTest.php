@@ -30,7 +30,6 @@ abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase
     }
 
     // getSector Y setSector
-
     public function testObtenerSector()
     {
         $sector = $this->crear();
@@ -86,5 +85,6 @@ abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase
         $e = $this->crear("Jose", "Caferatta", 8, 22000);
         $this->assertEquals("No especificado", $e->getSector());
     }
-
 }
+
+?>
