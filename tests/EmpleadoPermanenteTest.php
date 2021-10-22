@@ -48,8 +48,21 @@ class EmpleadoPermanenteTest extends EmpleadoTest
         $this->assertEquals($antiguedad->y, $r->calcularAntiguedad());
     }
 
+
+    //Probar que, si construyo un empleado sin proporcionar la fecha de ingreso, 
+    //el método getFechaIngreso() retorna la fecha del día, y el método getAntiguedad retorna 0.
+    public function testCalculaAntiguedadConDia0()
+    {
+      $fechaIngreso = new DateTime();
+      $r = $this->crear("Raul", "Perez", 32985270, 30000, $fechaIngreso);
+      $fechaActual = new DateTime();
+      $antiguedad = $fechaActual->diff($fechaIngreso);
+      $this->assertEquals($antiguedad->y, $r->calcularAntiguedad());
+      $this->assertEquals("0%", $r->calcularComision());
+    }
+
     //Probar que, si construyo un empleado proporcionando una fecha de ingreso posterior a la de hoy, lanza una excepción.
-    public function testCalculaAntiguedadConFechaFutura()
+    public function testCalcularAntiguedadConFechaPosterior()
     {
         $this->expectException(\Exception::class);
         $fechaDeIngreso = new DateTime('2028-04-11');
